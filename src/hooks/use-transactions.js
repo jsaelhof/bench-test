@@ -41,6 +41,7 @@ export const useTransactions = () => {
     lastPageFetched,
     totalTransactions,
     transactions,
+    err,
   ]);
 
   return {

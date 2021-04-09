@@ -1,16 +1,20 @@
 import {useTransactions} from "./hooks/use-transactions";
+import TransactionList from "./components/transaction-list";
+import {Container} from "@material-ui/core";
 
 const App = () => {
   const {err, ready, transactions} = useTransactions();
 
   return (
-    <div>
-      {err
-        ? err.message
-        : ready
-        ? `Transactions Loaded: ${transactions.length}`
-        : "Loading"}
-    </div>
+    <Container>
+      {err ? (
+        err.message
+      ) : ready ? (
+        <TransactionList transactions={transactions} />
+      ) : (
+        "Loading"
+      )}
+    </Container>
   );
 };
 
