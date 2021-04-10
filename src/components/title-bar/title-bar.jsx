@@ -7,11 +7,16 @@ const useStyles = makeStyles(({typography}) => ({
     color: "#2f3034",
   },
 
+  toolbar: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+  },
+
   logo: {
     height: 50,
-    flexGrow: 1,
     padding: 16,
     opacity: 0.7,
+    justifySelf: "center",
   },
 
   title: {
@@ -33,7 +38,7 @@ const TitleBar = () => {
 
   return (
     <AppBar className={classes.appBar} position="static">
-      <Toolbar>
+      <Toolbar className={classes.toolbar}>
         <div className={classes.title}>Coding Test</div>
         <img src="/bench.svg" className={classes.logo} alt="Bench.co" />
         <div className={classes.contact}>
