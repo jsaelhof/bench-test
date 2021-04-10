@@ -1,4 +1,6 @@
 import React from "react";
+import {format, isEqual} from "date-fns";
+import {makeStyles} from "@material-ui/core/styles";
 import {
   Paper,
   Table,
@@ -7,14 +9,26 @@ import {
   TableHead,
   TableRow,
 } from "@material-ui/core";
-import {format, isEqual} from "date-fns";
-import {makeStyles} from "@material-ui/core/styles";
 import accounting from "accounting";
-import clsx from "clsx";
-import ListTableCell from "./list-table-cell";
+
 import {sumTransactions} from "../../utils/sum-transactions";
+import ListTableCell from "./list-table-cell";
 
 const useStyles = makeStyles(() => ({
+  tableContainer: {
+    marginBottom: 32,
+  },
+
+  table: {
+    borderCollapse: "separate",
+    borderSpacing: "0 4px",
+  },
+
+  headerRow: {
+    background: "#FCFCFC",
+    boxShadow: "0 2px 4px rgba(0,0,0,0.15)",
+  },
+
   dateColumn: {
     color: "#666",
     verticalAlign: "top",
@@ -25,9 +39,9 @@ const useStyles = makeStyles(() => ({
     color: "#666",
   },
 
-  deposit: {
-    color: "green",
-    fontWeight: "bold",
+  balance: {
+    fontSize: 20,
+    color: "#5f573c",
   },
 }));
 
@@ -37,13 +51,17 @@ const TransactionList = ({transactions}) => {
   const balance = sumTransactions(transactions);
 
   return (
-    <TableContainer component={Paper} elevation={2}>
-      <Table size="small" stickyHeader>
+    <TableContainer
+      className={classes.tableContainer}
+      component={Paper}
+      elevation={2}
+    >
+      <Table size="small" className={classes.table}>
         <TableHead>
-          <TableRow>
+          <TableRow className={classes.headerRow}>
             <ListTableCell>Date</ListTableCell>
             <ListTableCell>Company</ListTableCell>
-            <ListTableCell align="right">
+            <ListTableCell className={classes.balance} align="right">
               {accounting.formatMoney(balance)}
             </ListTableCell>
           </TableRow>
@@ -56,14 +74,11 @@ const TransactionList = ({transactions}) => {
                   <div className={classes.date}>{format(Date, "MMM do")}</div>
                 ) : null}
               </ListTableCell>
-              <ListTableCell>
+              <ListTableCell deposit={Amount > 0} role="ledger">
                 <div>{Company}</div>
                 <div className={classes.ledger}>{Ledger}</div>
               </ListTableCell>
-              <ListTableCell
-                align="right"
-                className={clsx(Amount > 0 && classes.deposit)}
-              >
+              <ListTableCell align="right" deposit={Amount > 0} role="amount">
                 {accounting.formatMoney(Amount)}
               </ListTableCell>
             </TableRow>
