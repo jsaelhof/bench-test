@@ -2,6 +2,7 @@ import {useTransactions} from "./hooks/use-transactions";
 import {Container} from "@material-ui/core";
 import TitleBar from "./components/title-bar";
 import TransactionList from "./components/transaction-list";
+import Loading from "./components/loading";
 
 const App = () => {
   const {err, ready, transactions} = useTransactions();
@@ -15,7 +16,7 @@ const App = () => {
         ) : ready ? (
           <TransactionList transactions={transactions} />
         ) : (
-          "Loading"
+          <Loading />
         )}
       </Container>
     </div>
