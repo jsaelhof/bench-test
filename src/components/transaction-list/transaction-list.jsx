@@ -26,7 +26,7 @@ const useStyles = makeStyles(() => ({
 
   headerRow: {
     background: "#FCFCFC",
-    boxShadow: "0 2px 4px rgba(0,0,0,0.15)",
+    boxShadow: "0 2px 4px rgba(0,0,0,0.08)",
   },
 
   dateColumn: {
@@ -59,8 +59,8 @@ const TransactionList = ({transactions}) => {
       <Table size="small" className={classes.table}>
         <TableHead>
           <TableRow className={classes.headerRow}>
-            <ListTableCell>Date</ListTableCell>
-            <ListTableCell>Company</ListTableCell>
+            <ListTableCell>DATE</ListTableCell>
+            <ListTableCell>COMPANY</ListTableCell>
             <ListTableCell className={classes.balance} align="right">
               {accounting.formatMoney(balance)}
             </ListTableCell>

@@ -5,6 +5,8 @@ import clsx from "clsx";
 const useStyles = makeStyles(() => ({
   root: {
     borderBottom: "none",
+    paddingTop: 8,
+    paddingBottom: 8,
   },
 
   deposit: {
