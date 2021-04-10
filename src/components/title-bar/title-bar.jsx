@@ -3,16 +3,19 @@ import {AppBar, makeStyles, Toolbar} from "@material-ui/core";
 const useStyles = makeStyles(({typography}) => ({
   appBar: {
     marginBottom: 32,
+    background: "#efede7",
+    color: "#2f3034",
   },
 
   logo: {
-    width: 150,
-    marginRight: 16,
+    height: 50,
+    flexGrow: 1,
+    padding: 16,
+    opacity: 0.7,
   },
 
   title: {
     ...typography.h6,
-    flexGrow: 1,
   },
 
   contact: {
@@ -20,7 +23,6 @@ const useStyles = makeStyles(({typography}) => ({
     textAlign: "right",
 
     "& :first-child": {
-      fontWeight: "bold",
       fontSize: "1.2em",
     },
   },
@@ -32,8 +34,8 @@ const TitleBar = () => {
   return (
     <AppBar className={classes.appBar} position="static">
       <Toolbar>
-        <img src="/bench.png" className={classes.logo} alt="Bench.co" />
         <div className={classes.title}>Coding Test</div>
+        <img src="/bench.svg" className={classes.logo} alt="Bench.co" />
         <div className={classes.contact}>
           <div>Jason Saelhof</div>
           <div>jsaelhof@gmail.com</div>
