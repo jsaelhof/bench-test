@@ -1,4 +1,5 @@
 import {Button, makeStyles} from "@material-ui/core";
+import {bench} from "../../constants/bench";
 
 const useStyles = makeStyles(({typography}) => ({
   error: {
@@ -66,7 +67,7 @@ const Error = ({message}) => {
           </div>
           <Button
             onClick={() => {
-              window.location.href = "https://www.bench.co";
+              window.location.href = bench.HOME;
             }}
             variant="contained"
             className={classes.homeButton}
