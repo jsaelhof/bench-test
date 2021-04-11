@@ -10,6 +10,7 @@ import {
   TableRow,
 } from "@material-ui/core";
 import accounting from "accounting";
+import PropTypes from "prop-types";
 
 import {sumTransactions} from "../../utils/sum-transactions";
 import ListTableCell from "./list-table-cell";
@@ -87,6 +88,17 @@ const TransactionList = ({transactions}) => {
       </Table>
     </TableContainer>
   );
+};
+
+TransactionList.propTypes = {
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      Date: PropTypes.instanceOf(Date).isRequired,
+      Amount: PropTypes.number.isRequired,
+      Ledger: PropTypes.string.isRequired,
+      Company: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default React.memo(TransactionList);

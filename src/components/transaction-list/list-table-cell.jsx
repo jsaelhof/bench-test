@@ -1,6 +1,7 @@
 import BaseTableCell from "@material-ui/core/TableCell";
 import {makeStyles} from "@material-ui/core/styles";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -37,6 +38,11 @@ const TableCell = ({role, deposit, ...props}) => {
       {...props}
     />
   );
+};
+
+TableCell.propTypes = {
+  role: PropTypes.string,
+  deposit: PropTypes.bool,
 };
 
 export default TableCell;
