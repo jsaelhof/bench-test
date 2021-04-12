@@ -5,8 +5,11 @@ Thank you for taking time to review my submission.
 This app is an implementation of the test found here: https://resttest.bench.co/.
 
 I have implemented the requirements as described in the test documentation. I'd like to take moment to highlight some notable parts of the application.
+<br/>
+<br/>
+<br/>
 
-#### Main Screen
+### Main Screen
 
 ![Main Screen](https://github.com/jsaelhof/bench-test/blob/5fd014b14865a5105a997624cd16127696130f81/images/screen_main.png "Main Screen")
 
@@ -17,8 +20,11 @@ The app only displays dates on the first row that date occurs on. I did this to 
 I also chose to display the expense ledger as subtext beneath the company associated with the expense. Again, I felt this helped to increase the user's ability to scan the information by allowing them to focus initially on who the charge was associated with. The expense category is readily available but de-emphasized. This helps to provide heirarchy to the information. If a user was more interested in the category first, I would likely organize the information into groups by category and present each category in independant date order within each group. Ultimately both views could be provided, allowing the user to determine how best to reivew the data.
 
 Finally, I chose to highlight deposits/payments with a light green background. I felt this allowed the user to more easily identify these items.
+<br/>
+<br/>
+<br/>
 
-#### Error Screen
+### Error Screen
 
 ![Error Screen](https://github.com/jsaelhof/bench-test/blob/5fd014b14865a5105a997624cd16127696130f81/images/screen_error.png "Error Screen")
 
@@ -31,19 +37,28 @@ I also provided some text to guide the user toward a solution. They can try agai
 While I did not have time to design my own image, I used a stock image which I felt was at least similar to the general look-and-feel of the Bench.co brand (although I believe a better option could be produced given adequate time).
 
 Finally, for the sake of clarity in the test app, I chose to present the exception message in small text at the bottom of the screen. This technical data is not often useful to the user and would likely have already been logged when it occurred. In a real scenario, I would not likely present this to the user unless it was directly helpful for them to resolve the issue.
+<br/>
+<br/>
+<br/>
 
 ### Run
 
 - `npm install`
 - `npm start` (Runs on port 5000)
+  <br/>
+  <br/>
+  <br/>
 
 ### Test
 
 - `npm test` to start the test watcher
 
-OR
+##### OR
 
 - `npm run coverage` to run the tests watcher with coverage reporting
+  <br/>
+  <br/>
+  <br/>
 
 ### Notable Dependencies
 
