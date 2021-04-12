@@ -8,6 +8,7 @@ const useStyles = makeStyles(() => ({
     borderBottom: "none",
     paddingTop: 8,
     paddingBottom: 8,
+    transition: "background 250ms",
   },
 
   deposit: {

@@ -30,6 +30,13 @@ const useStyles = makeStyles(() => ({
     boxShadow: "0 2px 4px rgba(0,0,0,0.08)",
   },
 
+  tableRow: {
+    "&:hover td": {
+      borderRadius: "0",
+      background: "#fbf9f5",
+    },
+  },
+
   dateColumn: {
     color: "#666",
     verticalAlign: "top",
@@ -69,7 +76,7 @@ const TransactionList = ({transactions}) => {
         </TableHead>
         <TableBody>
           {transactions.map(({Date, Company, Ledger, Amount}, index) => (
-            <TableRow key={index}>
+            <TableRow key={index} className={classes.tableRow}>
               <ListTableCell className={classes.dateColumn}>
                 {!isEqual(transactions[index - 1]?.Date, Date) ? (
                   <div className={classes.date}>{format(Date, "MMM do")}</div>
