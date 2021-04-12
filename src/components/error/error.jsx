@@ -67,7 +67,7 @@ const Error = ({message}) => {
           </div>
           <Button
             onClick={() => {
-              window.location.href = bench.HOME;
+              window.location.assign(bench.HOME);
             }}
             variant="contained"
             className={classes.homeButton}
