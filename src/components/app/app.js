@@ -1,9 +1,9 @@
-import {useTransactions} from "./hooks/use-transactions";
+import {useTransactions} from "../../hooks/use-transactions";
 import {Container} from "@material-ui/core";
-import TitleBar from "./components/title-bar";
-import TransactionList from "./components/transaction-list";
-import Loading from "./components/loading";
-import Error from "./components/error";
+import TitleBar from "../title-bar";
+import TransactionList from "../transaction-list";
+import Loading from "../loading";
+import Error from "../error";
 
 const App = () => {
   const {err, ready, transactions} = useTransactions();
