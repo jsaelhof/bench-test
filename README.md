@@ -5,6 +5,8 @@ Thank you for taking time to review my submission.
 This app is an implementation of the test found here: https://resttest.bench.co/.
 
 I have implemented the requirements as described in the test documentation. I'd like to take moment to highlight some notable parts of the application.
+
+Note: I have also created a branch with some additional work, beyond the scope of the original requirements, that I would invite you to [look at here](https://github.com/jsaelhof/bench-test/tree/expense-summary)
 <br/>
 <br/>
 <br/>
